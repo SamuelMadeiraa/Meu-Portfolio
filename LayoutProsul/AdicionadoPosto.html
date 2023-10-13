@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Adicionado Novos Postos</title>
+</head>
+<body>
+
+    <div class="container-fluid p-5 bg-dark text-white text-center">
+        <h1>Adicionado novos postos</h1> 
+    </div>
+    <section id="tabela">
+        <div class="breadcrumb"></div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Posto</th>
+                        <th scope="col">Rodovia</th>
+                        <th scope="col">Inicio(A)</th>
+                        <th scope="col">Fim(B)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>CV-1_PROSUL_CHAPECO</td>
+                        <td>BR-483/SC</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>CV-2_PROSUL_CHAPECO</td>
+                        <td>BR-480/SC</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </section>
+
+    <input type="text" id="nomeInput" placeholder="Digite um nome">
+    <button id="botaoCriar">Criar</button>
+
+    <script>
+        // Função para adicionar um nome à tabela
+        function adicionarNome() {
+            // Obtenha o valor do nome do input
+            var nome = document.getElementById("nomeInput").value;
+
+            if (nome.trim() !== "") {
+                // Se o nome não estiver em branco
+                var tabela = document.querySelector("#tabela table tbody");
+                var novaLinha = tabela.insertRow(tabela.rows.length);
+                var celula = novaLinha.insertCell(0);
+                celula.innerHTML = nome;
+            }
+
+            // Limpar o campo de entrada
+            document.getElementById("nomeInput").value = "";
+        }
+
+        // Associar a função ao evento de clique do botão
+        document.getElementById("botaoCriar").addEventListener("click", adicionarNome);
+    </script>
+</body>
+</html>
