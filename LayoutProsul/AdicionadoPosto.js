@@ -1,5 +1,3 @@
-<input type="text" id="nomeInput" placeholder="Digite um nome">
-    <button id="botaoCriar">Criar</button>
 
     <script>
         // Função para adicionar um nome à tabela
